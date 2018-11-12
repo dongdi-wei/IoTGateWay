@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4f065baa-b1dc-466f-bbe0-31b2499e16a4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/model/detect_result_test.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/device_status_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/config.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/device_status.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/device_status.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/model/settings.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/settings.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sever.go" beforeDir="false" afterPath="$PROJECT_DIR$/sever.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sevice/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/sevice/config.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -67,7 +60,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/model/settings.go">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="150">
@@ -85,7 +78,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/model/detect_result_test.go">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="75">
@@ -184,7 +177,6 @@
         <option value="$PROJECT_DIR$/consts/db_const.go" />
         <option value="$PROJECT_DIR$/consts/settings.go" />
         <option value="$PROJECT_DIR$/model/detect_result.go" />
-        <option value="$PROJECT_DIR$/model/settings.go" />
         <option value="$PROJECT_DIR$/sevice/config.go" />
         <option value="$PROJECT_DIR$/model/test_detect_result.go" />
         <option value="$PROJECT_DIR$/sever.go" />
@@ -192,6 +184,7 @@
         <option value="$PROJECT_DIR$/model/config.go" />
         <option value="$PROJECT_DIR$/model/device_status_test.go" />
         <option value="$PROJECT_DIR$/model/detect_result_test.go" />
+        <option value="$PROJECT_DIR$/model/settings.go" />
       </list>
     </option>
   </component>
@@ -408,12 +401,12 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25718608" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25718608" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.35737705" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.35737705" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -518,13 +511,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/settings.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="6" column="34" lean-forward="true" selection-start-line="6" selection-start-column="34" selection-end-line="6" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/model/detect_result.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="44">
@@ -566,6 +552,13 @@
           <folding>
             <element signature="e#15#64#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/settings.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="6" column="34" lean-forward="true" selection-start-line="6" selection-start-column="34" selection-end-line="6" selection-end-column="34" />
         </state>
       </provider>
     </entry>
