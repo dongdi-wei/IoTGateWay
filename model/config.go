@@ -10,11 +10,7 @@ var(
 )
 
 func Init() {
-	DBIot, err := gorm.Open("mysql",fmt.Sprintf("%s:%s@(%s:%s)/%s?charset=utf8&parseTime=True&loc=Local",database_uname,database_passwd,database_ip,database_port,database_name))
-	if err != nil {
-		fmt.Println("connect db error,%v", err)
-	}
-	defer DBIot.Close()
+	DBIot, _ = gorm.Open("mysql",fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?charset=utf8&parseTime=True&loc=Local",database_uname,database_passwd,database_ip,database_port,database_name))
 	if DBIot != nil {
 		fmt.Println("db connect success")
 	}

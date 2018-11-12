@@ -1,6 +1,8 @@
 package main
 
-import "IoTGateWay/model"
+import (
+	"IoTGateWay/model"
+)
 
 func main()  {
 	model.Init()

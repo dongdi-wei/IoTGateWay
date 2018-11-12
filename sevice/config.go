@@ -1,6 +1,9 @@
 package sevice
 
-import "IoTGateWay/model"
+import (
+	"IoTGateWay/model"
+	"fmt"
+)
 
 var (
 	DevStatusSer *model.DeviceStatusService
@@ -9,4 +12,5 @@ var (
 func Init() {
 	DevStatusSer = model.GetDeviceStatusHandler()
 	DetResultSer = model.GetDetectResultHandler()
+	fmt.Println("service init success")
 }

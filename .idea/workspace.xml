@@ -2,16 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4f065baa-b1dc-466f-bbe0-31b2499e16a4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/consts/retcode.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/config.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/detect_result.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/device_status.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/model/settings.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sever.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sevice/DataDetect.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sevice/DataGather.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sevice/config.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/detect_result_test.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/device_status_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/config.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/device_status.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/device_status.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/settings.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/settings.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sever.go" beforeDir="false" afterPath="$PROJECT_DIR$/sever.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sevice/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/sevice/config.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,30 +21,31 @@
     <session id="1952894414">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="2" />
+          <entry key="project.open.time.18" value="1" />
           <entry key="project.open.time.3890" value="1" />
           <entry key="project.open.time.7" value="1" />
-          <entry key="project.opened" value="2" />
+          <entry key="project.opened" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="go" value="16" />
+          <entry key="go" value="25" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Go" value="16" />
+          <entry key="Go" value="25" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="go" value="2855" />
+          <entry key="go" value="3475" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Go" value="2855" />
+          <entry key="Go" value="3475" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.go.postfix.template.usages.trigger" />
@@ -59,8 +58,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/model/config.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="407">
-              <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+            <state relative-caret-position="250">
+              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
               <folding>
                 <element signature="e#15#101#0" expanded="true" />
               </folding>
@@ -71,8 +70,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/model/settings.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="5" column="29" lean-forward="true" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
+            <state relative-caret-position="150">
+              <caret line="6" column="34" lean-forward="true" selection-start-line="6" selection-start-column="34" selection-end-line="6" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -80,10 +79,58 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/model/device_status.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="143">
-              <caret line="70" column="29" lean-forward="true" selection-start-line="70" selection-start-column="29" selection-end-line="70" selection-end-column="29" />
+            <state relative-caret-position="100">
+              <caret line="71" column="36" selection-start-line="71" selection-start-column="36" selection-end-line="71" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/model/detect_result_test.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="6" column="1" lean-forward="true" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
               <folding>
-                <element signature="e#15#41#0" expanded="true" />
+                <element signature="e#15#64#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/model/device_status_test.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="50">
+              <caret line="21" column="78" lean-forward="true" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="78" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://C:/Go/src/testing/testing.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="35">
+              <caret line="826" selection-start-line="826" selection-end-line="826" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/vendor/github.com/jinzhu/gorm/main.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="118">
+              <caret line="170" selection-start-line="170" selection-end-line="170" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sever.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+              <folding>
+                <element signature="e#14#65#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -92,35 +139,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sevice/config.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="9" column="44" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
+            <state relative-caret-position="218">
+              <caret line="12" column="35" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
+              <folding>
+                <element signature="e#16#53#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sevice/DataGather.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="50">
-              <caret line="2" selection-start-line="2" selection-end-line="2" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sevice/DataDetect.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="25">
-              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/model/detect_result.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="343">
-              <caret line="85" column="18" lean-forward="true" selection-start-line="85" selection-start-column="18" selection-end-line="85" selection-end-column="18" />
+            <state relative-caret-position="44">
+              <caret line="37" column="26" lean-forward="true" selection-start-line="37" selection-start-column="26" selection-end-line="37" selection-end-column="26" />
               <folding>
                 <element signature="e#15#48#0" expanded="true" />
               </folding>
@@ -144,19 +176,22 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/sever.go" />
         <option value="$PROJECT_DIR$/sevice/DataGather.go" />
         <option value="$PROJECT_DIR$/sevice/DataDetect.go" />
         <option value="$PROJECT_DIR$/model/const.go" />
         <option value="$PROJECT_DIR$/consts/const.go" />
         <option value="$PROJECT_DIR$/consts/Retcode.go" />
         <option value="$PROJECT_DIR$/consts/db_const.go" />
-        <option value="$PROJECT_DIR$/model/config.go" />
         <option value="$PROJECT_DIR$/consts/settings.go" />
-        <option value="$PROJECT_DIR$/model/settings.go" />
-        <option value="$PROJECT_DIR$/model/device_status.go" />
-        <option value="$PROJECT_DIR$/sevice/config.go" />
         <option value="$PROJECT_DIR$/model/detect_result.go" />
+        <option value="$PROJECT_DIR$/model/settings.go" />
+        <option value="$PROJECT_DIR$/sevice/config.go" />
+        <option value="$PROJECT_DIR$/model/test_detect_result.go" />
+        <option value="$PROJECT_DIR$/sever.go" />
+        <option value="$PROJECT_DIR$/model/device_status.go" />
+        <option value="$PROJECT_DIR$/model/config.go" />
+        <option value="$PROJECT_DIR$/model/device_status_test.go" />
+        <option value="$PROJECT_DIR$/model/detect_result_test.go" />
       </list>
     </option>
   </component>
@@ -235,6 +270,9 @@
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\wei\go\src\IoTGateWay\model" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\wei\go\src\IoTGateWay\model" />
       <recent name="C:\Users\wei\go\src\IoTGateWay\consts" />
@@ -252,21 +290,110 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
-    <configuration name="go build sever.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Go Test.TestDetectResultService_GetAllInfo in IoTGateWay/model">
+    <configuration name="TestDetectResultService_GetAllInfo in IoTGateWay/model" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
       <module name="IoTGateWay" />
-      <working_directory value="$PROJECT_DIR$/" />
-      <kind value="FILE" />
-      <filePath value="$PROJECT_DIR$/sever.go" />
-      <package value="IoTGateWay" />
+      <working_directory value="$PROJECT_DIR$/model" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="IoTGateWay/model" />
       <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/" />
+      <pattern value="^TestDetectResultService_GetAllInfo$" />
       <method v="2" />
     </configuration>
+    <configuration name="TestDetectResultService_InsertResult in IoTGateWay/model" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="IoTGateWay" />
+      <working_directory value="$PROJECT_DIR$/model" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="IoTGateWay/model" />
+      <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/" />
+      <pattern value="^TestDetectResultService_InsertResult$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestDeviceStatusService_GetAllInfo in IoTGateWay/model" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="IoTGateWay" />
+      <working_directory value="$PROJECT_DIR$/model" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="IoTGateWay/model" />
+      <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/" />
+      <pattern value="^TestDeviceStatusService_GetAllInfo$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestDeviceStatusService_GetStatusByDeviceID in IoTGateWay/model" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="IoTGateWay" />
+      <working_directory value="$PROJECT_DIR$/model" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="IoTGateWay/model" />
+      <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/" />
+      <pattern value="^TestDeviceStatusService_GetStatusByDeviceID$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestDeviceStatusService_InsertStatus in IoTGateWay/model" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="IoTGateWay" />
+      <working_directory value="$PROJECT_DIR$/model" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="IoTGateWay/model" />
+      <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/" />
+      <pattern value="^TestDeviceStatusService_InsertStatus$" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Go Test.TestDeviceStatusService_GetAllInfo in IoTGateWay/model" />
+      <item itemvalue="Go Test.TestDeviceStatusService_InsertStatus in IoTGateWay/model" />
+      <item itemvalue="Go Test.TestDeviceStatusService_GetStatusByDeviceID in IoTGateWay/model" />
+      <item itemvalue="Go Test.TestDetectResultService_InsertResult in IoTGateWay/model" />
+      <item itemvalue="Go Test.TestDetectResultService_GetAllInfo in IoTGateWay/model" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Go Build.go build sever.go" />
+        <item itemvalue="Go Test.TestDetectResultService_GetAllInfo in IoTGateWay/model" />
+        <item itemvalue="Go Test.TestDetectResultService_InsertResult in IoTGateWay/model" />
+        <item itemvalue="Go Test.TestDeviceStatusService_GetStatusByDeviceID in IoTGateWay/model" />
+        <item itemvalue="Go Test.TestDeviceStatusService_GetAllInfo in IoTGateWay/model" />
+        <item itemvalue="Go Test.TestDeviceStatusService_InsertStatus in IoTGateWay/model" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="TestHistory">
+    <history-entry file="TestDeviceStatusService_GetAllInfo_in_IoTGateWay_model - 2018.11.12 at 23h 22m 54s.xml">
+      <configuration name="TestDeviceStatusService_GetAllInfo in IoTGateWay/model" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestDeviceStatusService_InsertStatus_in_IoTGateWay_model - 2018.11.12 at 23h 25m 28s.xml">
+      <configuration name="TestDeviceStatusService_InsertStatus in IoTGateWay/model" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestDeviceStatusService_InsertStatus_in_IoTGateWay_model - 2018.11.12 at 23h 26m 52s.xml">
+      <configuration name="TestDeviceStatusService_InsertStatus in IoTGateWay/model" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestDeviceStatusService_InsertStatus_in_IoTGateWay_model - 2018.11.12 at 23h 27m 45s.xml">
+      <configuration name="TestDeviceStatusService_InsertStatus in IoTGateWay/model" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestDeviceStatusService_GetAllInfo_in_IoTGateWay_model - 2018.11.12 at 23h 28m 04s.xml">
+      <configuration name="TestDeviceStatusService_GetAllInfo in IoTGateWay/model" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestDeviceStatusService_GetAllInfo_in_IoTGateWay_model - 2018.11.12 at 23h 29m 46s.xml">
+      <configuration name="TestDeviceStatusService_GetAllInfo in IoTGateWay/model" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestDeviceStatusService_GetStatusByDeviceID_in_IoTGateWay_model - 2018.11.12 at 23h 31m 32s.xml">
+      <configuration name="TestDeviceStatusService_GetStatusByDeviceID in IoTGateWay/model" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestDetectResultService_InsertResult_in_IoTGateWay_model - 2018.11.12 at 23h 33m 41s.xml">
+      <configuration name="TestDetectResultService_InsertResult in IoTGateWay/model" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestDetectResultService_InsertResult_in_IoTGateWay_model - 2018.11.12 at 23h 37m 00s.xml">
+      <configuration name="TestDetectResultService_InsertResult in IoTGateWay/model" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestDetectResultService_GetAllInfo_in_IoTGateWay_model - 2018.11.12 at 23h 38m 55s.xml">
+      <configuration name="TestDetectResultService_GetAllInfo in IoTGateWay/model" configurationId="GoTestRunConfiguration" />
+    </history-entry>
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -281,12 +408,12 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25340393" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25718608" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3295082" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.35737705" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -322,10 +449,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/github.com/jinzhu/gorm/main.go">
+    <entry file="file://$PROJECT_DIR$/consts/retcode.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="312" column="13" selection-start-line="312" selection-start-column="13" selection-end-line="312" selection-end-column="13" />
+        <state relative-caret-position="25">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
     </entry>
@@ -339,71 +466,105 @@
     <entry file="file://$PROJECT_DIR$/sevice/DataDetect.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="25">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Go/src/database/sql/driver/driver.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-699">
+          <caret line="71" column="4" selection-start-line="71" selection-start-column="4" selection-end-line="71" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Go/src/database/sql/sql.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="702" column="42" selection-start-line="702" selection-start-column="42" selection-end-line="702" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/github.com/jinzhu/gorm/main.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="118">
+          <caret line="170" selection-start-line="170" selection-end-line="170" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sevice/config.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="218">
+          <caret line="12" column="35" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
+          <folding>
+            <element signature="e#16#53#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Go/src/testing/testing.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="35">
+          <caret line="826" selection-start-line="826" selection-end-line="826" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sever.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="5" column="16" lean-forward="true" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/consts/retcode.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        <state relative-caret-position="120">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+          <folding>
+            <element signature="e#14#65#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/model/settings.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        <state relative-caret-position="150">
+          <caret line="6" column="34" lean-forward="true" selection-start-line="6" selection-start-column="34" selection-end-line="6" selection-end-column="34" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/settings.go">
+    <entry file="file://$PROJECT_DIR$/model/detect_result.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="5" column="29" lean-forward="true" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
+        <state relative-caret-position="44">
+          <caret line="37" column="26" lean-forward="true" selection-start-line="37" selection-start-column="26" selection-end-line="37" selection-end-column="26" />
+          <folding>
+            <element signature="e#15#48#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/model/config.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="407">
-          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+        <state relative-caret-position="250">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
           <folding>
             <element signature="e#15#101#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sevice/config.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="9" column="44" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/model/device_status.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="70" column="29" lean-forward="true" selection-start-line="70" selection-start-column="29" selection-end-line="70" selection-end-column="29" />
-          <folding>
-            <element signature="e#15#41#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="100">
+          <caret line="71" column="36" selection-start-line="71" selection-start-column="36" selection-end-line="71" selection-end-column="36" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/detect_result.go">
+    <entry file="file://$PROJECT_DIR$/model/device_status_test.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
-          <caret line="85" column="18" lean-forward="true" selection-start-line="85" selection-start-column="18" selection-end-line="85" selection-end-column="18" />
+        <state relative-caret-position="50">
+          <caret line="21" column="78" lean-forward="true" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/detect_result_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="6" column="1" lean-forward="true" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
           <folding>
-            <element signature="e#15#48#0" expanded="true" />
+            <element signature="e#15#64#0" expanded="true" />
           </folding>
         </state>
       </provider>
