@@ -6,10 +6,11 @@ import (
 	"net"
 	"os"
 )
-
+const SERVICE_IP = "10.203.8.70"
+const USE_PORT = "8081"
 func sevice() {
 
-	netListen, err := net.Listen("tcp", "10.203.8.70:8081")
+	netListen, err := net.Listen("tcp", SERVICE_IP + ":" + USE_PORT)
 	CheckError(err)
 
 	defer netListen.Close()
