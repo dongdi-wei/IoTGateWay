@@ -5,7 +5,7 @@ import (
 	"log"
 	"net"
 	"os"
-        "IoTGateWay/sevice/Datagather_config"
+	"IoTGateWay/sevice/Datagather_config"
 )
 const SERVICE_IP = "10.203.8.70"
 const USE_PORT = "8081"
