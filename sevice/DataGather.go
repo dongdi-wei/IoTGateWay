@@ -5,6 +5,8 @@ import (
 	"log"
 	"net"
 	"os"
+	"IoTGateWay/model"
+	"IoTGateWay/base"
 )
 const SERVICE_IP = "10.203.8.70"
 const USE_PORT = "8081"
@@ -40,21 +42,9 @@ func handleConnection(conn net.Conn) {
 		}
 
 		Log(conn.RemoteAddr().String(), "receive data string:\n", string(buffer[:n]))
-
-
+                model.Init()
+                
 		//strTemp := "CofoxServer got msg \""+string(buffer[:n])+"\" at "+time.Now().String()
 		//conn.Write([]byte(strTemp))
-	}
-}
-
-
-func Log(v ...interface{}) {
-	log.Println(v...)
-}
-
-
-func CheckError(err error) {
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Fatal error: %s", err.Error())
 	}
 }
