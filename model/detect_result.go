@@ -14,7 +14,7 @@ var (
 	DetectResultServiceHandler *DetectResultService
 	dResultonce sync.Once)
 type DetectResult struct {
-	DeviceID 		int 		`gorm:"column:deviceid"`		//设置DeviceID对应在数据库表里的列为deviceid,设备id，用于区分设备，为0时表示未知设备
+	DeviceID 		int64 		`gorm:"column:deviceid"`		//设置DeviceID对应在数据库表里的列为deviceid,设备id，用于区分设备，为0时表示未知设备
 	DeviceName  	string		`gorm:"column:devicename"`		//设备名称
 	DeteDimension	string		`gorm:"column:detectiond"`		//检测维度
 	DeteRulesID		int			`gorm:"column:detection_rules_id"`//使用的检测规则
@@ -47,8 +47,7 @@ func GetDetectResultHandler() *DetectResultService {
 func (d *DetectResultService)InsertResult(detectResult *DetectResult) error{
 	err := DBIot.Create(detectResult).Error
 	if err != nil{
-		//todo 打成log
-		fmt.Println(fmt.Sprintf("DetectResultService InsertResult error :%v",err))
+		Logger.Error(fmt.Sprintf("DetectResultService InsertResult error :%v",err))
 	}
 	return err
 }
@@ -58,8 +57,7 @@ func (d *DetectResultService)GetAllInfo() []*DetectResult{
 	var DetResuList []*DetectResult
 	err := DBIot.Find(&DetResuList).Error
 	if err != nil{
-		//todo 打成log
-		fmt.Println(fmt.Sprintf("DetectResultService GetAllInfo error :%v",err))
+		Logger.Error(fmt.Sprintf("DetectResultService GetAllInfo error :%v",err))
 	}
 	return DetResuList
 }
@@ -70,7 +68,7 @@ func (d *DetectResultService)GetResultByDeviceID(deviceID int) []*DetectResult{
 	err := DBIot.Where("deviceid=?",deviceID).Find(&DecResuList).Error
 	if err != nil{
 		//todo 打成log
-		fmt.Println(fmt.Sprintf("DetectResultService GetResultByDeviceID error :%v",err))
+		Logger.Error(fmt.Sprintf("DetectResultService GetResultByDeviceID error :%v",err))
 	}
 	return DecResuList
 }
@@ -80,8 +78,7 @@ func (d *DetectResultService)GetDeviceListBySourceMark(sMark int) []int{
 	var DevList []int
 	err := DBIot.Raw(fmt.Sprintf("select deviceid from GT_DeviceDectResult where sourcemark=%d group by deviceid",sMark)).Find(&DevList).Error
 	if err != nil{
-		//todo 打成log
-		fmt.Println(fmt.Sprintf("DetectResultService GetDeviceListBySourceMark error :%v",err))
+		Logger.Error(fmt.Sprintf("DetectResultService GetDeviceListBySourceMark error :%v",err))
 	}
 	return DevList
 }

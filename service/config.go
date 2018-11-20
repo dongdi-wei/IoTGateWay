@@ -1,16 +1,18 @@
-package sevice
+package service
 
 import (
+	"IoTGateWay/base"
 	"IoTGateWay/model"
-	"fmt"
 )
 
 var (
 	DevStatusSer *model.DeviceStatusService
 	DetResultSer *model.DetectResultService
+	Logger 		 *base.LogIot
 )
 func Init() {
 	DevStatusSer = model.GetDeviceStatusHandler()
 	DetResultSer = model.GetDetectResultHandler()
-	fmt.Println("service init success")
+	Logger = base.IotLogger
+	Logger.Info("service init success")
 }

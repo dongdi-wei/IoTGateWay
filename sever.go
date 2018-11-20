@@ -1,9 +1,9 @@
 package main
 
 import (
-	"IoTGateWay/model"
+	_ "IoTGateWay/model"
+	_ "IoTGateWay/service"
 )
 
 func main()  {
-	model.Init()
 }

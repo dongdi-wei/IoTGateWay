@@ -50,8 +50,7 @@ func GetDeviceStatusHandler() *DeviceStatusService {
 func (d *DeviceStatusService)InsertStatus(deviceStatus *DeviceStatus) error{
 	err := DBIot.Create(deviceStatus).Error
 	if err != nil{
-		//todo 打成log
-		fmt.Println(fmt.Sprintf("DeviceStatusService InsertStatus error :%v",err))
+		Logger.Error(fmt.Sprintf("DeviceStatusService InsertStatus error :%v",err))
 	}
 	return err
 }
@@ -61,8 +60,7 @@ func (d *DeviceStatusService)GetAllInfo() []*DeviceStatus{
 	var DevStatusList []*DeviceStatus
 	err := DBIot.Find(&DevStatusList).Error
 	if err != nil{
-		//todo 打成log
-		fmt.Println(fmt.Sprintf("DeviceStatusService GetAllInfo error :%v",err))
+		Logger.Error(fmt.Sprintf("DeviceStatusService GetAllInfo error :%v",err))
 	}
 	return DevStatusList
 }
@@ -72,8 +70,7 @@ func (d *DeviceStatusService)GetStatusByDeviceID(deviceID int) []*DeviceStatus{
 	var DevStatusList []*DeviceStatus
 	err := DBIot.Where("deviceid=?",deviceID).Find(&DevStatusList).Error
 	if err != nil{
-		//todo 打成log
-		fmt.Println(fmt.Sprintf("DeviceStatusService GetStatusByDeviceID error :%v",err))
+		Logger.Error(fmt.Sprintf("DeviceStatusService GetStatusByDeviceID error :%v",err))
 	}
 	return DevStatusList
 }
@@ -83,8 +80,7 @@ func (d *DeviceStatusService)GetStatusByDidAndLN(deviceID,L,N int) []*DeviceStat
 	var DevStatusList []*DeviceStatus
 	err := DBIot.Raw(fmt.Sprintf("select * from GT_DeviceStatus where deviceid=%d order by id limit %d,%d;",deviceID,L*(N-1),L)).Find(&DevStatusList).Error
 	if err != nil{
-		//todo 打成log
-		fmt.Println(fmt.Sprintf("DeviceStatusService GetStatusByDidAndLN error :%v",err))
+		Logger.Error(fmt.Sprintf("DeviceStatusService GetStatusByDidAndLN error :%v",err))
 	}
 	return DevStatusList
 }

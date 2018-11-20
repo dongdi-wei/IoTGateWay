@@ -1,1 +1,2 @@
 model/settings.go
+*.log
