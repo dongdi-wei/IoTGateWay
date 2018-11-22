@@ -1,10 +1,25 @@
 package wraper
 
+import (
+	"IoTGateWay/base"
+	"sync"
+)
+
 type wrape struct {
 }
 
-var Wraper *wrape
+var (Wraper *wrape
+	 wrapOnce sync.Once
+	 Logger *base.LogIot
+)
 
 func Init()  {
-	Wraper = new(wrape)
+	wrapOnce.Do(func() {
+		Wraper = new(wrape)
+	})
+	Logger = base.IotLogger
+}
+
+func init()  {
+	Init()
 }
