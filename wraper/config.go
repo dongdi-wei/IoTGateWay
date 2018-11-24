@@ -5,17 +5,17 @@ import (
 	"sync"
 )
 
-type wrape struct {
+type Wrape struct {
 }
 
-var (Wraper *wrape
+var (Wraper *Wrape
 	 wrapOnce sync.Once
 	 Logger *base.LogIot
 )
 
 func Init()  {
 	wrapOnce.Do(func() {
-		Wraper = new(wrape)
+		Wraper = new(Wrape)
 	})
 	Logger = base.IotLogger
 }

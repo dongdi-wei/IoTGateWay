@@ -16,15 +16,15 @@ var (
 
 type DeviceStatus struct {
 	ID				uint64      `gorm:"column:id`				//用来对设备数据进行分段的标识
-	DeviceID 		uint 		`gorm:"column:deviceid"`		//设置DeviceID对应在数据库表里的列为deviceid,设备id，用于区分设备，为0时表示未知设备
+	DeviceID 		uint64 		`gorm:"column:deviceid"`		//设置DeviceID对应在数据库表里的列为deviceid,设备id，用于区分设备，为0时表示未知设备
 	DeviceName  	string		`gorm:"column:devicename"`		//设备名称
-	TTRuntime		uint		`gorm:"column:tt_runtime"`		//检测的任务的周期运行时间，单位ms
+	TTRuntime		uint64		`gorm:"column:tt_runtime"`		//检测的任务的周期运行时间，单位ms
 	CpuUseRate  	float64		`gorm:"column:cpu_userate"`		//CPU 使用率
 	CpuAvailable  	float64		`gorm:"column:cpu_available"`	//CPU 可用率
 	MemUseRate  	float64		`gorm:"column:mem_userate"`		//内存 使用率
 	MemAvailable  	float64		`gorm:"column:mem_available"`	//内存 可用率
 	Reserve			string		`gorm:"column:reserve"`			//保留字段，方便以后增加检测维度
-	Mark			uint		`gorm:"column:mark"`			//标记信息，用于计算检测准确率或校验检测模型，0:没有标记,1:正常标记,2:异常标记
+	Mark			int			`gorm:"column:mark"`			//标记信息，用于计算检测准确率或校验检测模型，0:没有标记,1:正常标记,2:异常标记
 	CreateTime  	time.Time	`gorm:"column:createtime"`
 	ModifyTime 		time.Time	`gorm:"column:modifytime"`
 }

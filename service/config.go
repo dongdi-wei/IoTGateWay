@@ -9,6 +9,7 @@ var (
 	DevStatusSer *model.DeviceStatusService
 	DetResultSer *model.DetectResultService
 	Logger 		 *base.LogIot
+	Wraper		 *wraper
 )
 func Init() {
 	DevStatusSer = model.GetDeviceStatusHandler()
