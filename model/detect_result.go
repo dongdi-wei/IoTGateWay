@@ -67,7 +67,6 @@ func (d *DetectResultService)GetResultByDeviceID(deviceID int) []*DetectResult{
 	var DecResuList []*DetectResult
 	err := DBIot.Where("deviceid=?",deviceID).Find(&DecResuList).Error
 	if err != nil{
-		//todo 打成log
 		Logger.Error(fmt.Sprintf("DetectResultService GetResultByDeviceID error :%v",err))
 	}
 	return DecResuList

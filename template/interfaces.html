@@ -1,0 +1,45 @@
+{{template "header" .}}
+<script type="text/javascript">
+    function show() {
+        var interfaceIp = document.getElementById("interfaceT").rows[1].cells[2].innerHTML;
+        $("#toPageList").attr("href","/iplist?ip="+interfaceIp);
+    }
+</script>
+        <div class="container">
+            <h2>物联网安全网关</h2>
+            <hr/>
+            <h3>网关接口</h3>
+            <table id = "interfaceT" class="striped bordered">
+                <thead>
+                    <tr>
+                        <th>序号</th>
+                        <th>网口</th>
+                        <th>IP地址</th>
+                        <th>Mac地址</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{range $k,$interf := .interfaceTable}}
+                <tr>
+                    <td>{{$k}}</td>
+                    {{range $.Tbody}}
+                    <td>
+                        {{index $interf .}}
+                    </td>
+                    {{end}}
+                    <td>
+                        <button class="btn-flat waves-effect waves-light green">
+                            <a href="/iplist" id="toPageList" onclick="show()">
+                            查看<i class="material-icons black">send</i>
+                            </a>
+                            <script>show()</script>
+                        </button>
+                    </td>
+                </tr>
+                {{end}}
+                </tbody>
+            </table>
+            <hr/>
+        </div>
+{{template "footer" }}

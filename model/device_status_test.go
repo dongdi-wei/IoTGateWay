@@ -19,7 +19,7 @@ func TestDeviceStatusService_GetAllInfo(t *testing.T)  {
 
 func TestDeviceStatusService_InsertStatus(t *testing.T) {
 	Init()
-	d := &DeviceStatus{DeviceID:0,CreateTime:time.Now(),ModifyTime:time.Now()}
+	d := &DeviceStatus{DeviceID:1250999896491,CreateTime:time.Now(),ModifyTime:time.Now()}
 	err := GetDeviceStatusHandler().InsertStatus(d)
 	if err != nil {
 		fmt.Println("err", err)

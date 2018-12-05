@@ -1,0 +1,42 @@
+{{define "header"}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+    <title>IoT GateWay</title>
+
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="/static/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="/static/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+<nav class="light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Logo</a>
+        <ul class="right hide-on-med-and-down">
+            <li><a href="#">窗口导航</a></li>
+        </ul>
+
+        <ul id="nav-mobile" class="side-nav">
+            <li><a href="#">窗口导航</a></li>
+        </ul>
+        <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+</nav>
+<ul id="slide-out" class="side-nav" style="transform: translateX(0%);width: 180px;">
+    <li><div class="userView">
+        <div class="background">
+        </div>
+        <a href="#!user"><img class="circle" src="/static/images/bupt.jpg"></a>
+        <a href="#!name"><span class="black-text name">SDS402</span></a>
+        <a href="#!email"><span class="black-text email">sds402@bupt.edu.cn</span></a>
+    </div></li>
+    <li><a href="#!"><i class="material-icons">cloud</i>云端结果</a></li>
+    <li><a href="#!"><i class="material-icons">home</i>本地结果</a></li>
+    <li><div class="divider"></div></li>
+    <li><a class="subheader">子标题1</a></li>
+    <li><a class="subheader" href="#">子标题2</a></li>
+</ul>
+<a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+{{end}}

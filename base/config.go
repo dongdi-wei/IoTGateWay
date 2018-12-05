@@ -1,6 +1,7 @@
 package base
 
 import (
+	"io"
 	"log"
 	"os"
 	"sync"
@@ -8,6 +9,7 @@ import (
 
 var (IotLogger *LogIot
 	logOnce sync.Once
+	File io.Writer
 )
 func init()  {
 	logOnce.Do(func() {
@@ -17,6 +19,7 @@ func init()  {
 			log.Fatalln("failed to open error log file:", err)
 		}
 		flag := log.Llongfile
+		File = file
 		IotLogger = NewWriterLogger(file,flag,3)
 	})
 }
