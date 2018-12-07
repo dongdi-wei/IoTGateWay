@@ -6,10 +6,12 @@ import (
 )
 
 func TestExternalIP(t *testing.T) {
-	fmt.Println(ExternalIP())
+	Init()
+	fmt.Println(Scanner.ExternalIP())
 }
 func TestInterFaces(t *testing.T) {
-	retList, err := InterFaces()
+	Init()
+	retList, err := Scanner.InterFaces()
 	if err != nil {
 		Logger.Error("TestInterFaces InterFaces error:%v", err)
 	} else {
@@ -17,4 +19,9 @@ func TestInterFaces(t *testing.T) {
 			Logger.Info("%v", k)
 		}
 	}
+}
+func TestNetScanner_Mac(t *testing.T) {
+	Init()
+	mac,time,err := Scanner.Mac("10.210.107.201")
+	Logger.Info("TestNetScanner_Mac,%v,%v,%v",mac,time,err)
 }

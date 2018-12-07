@@ -63,6 +63,9 @@ func (s *NetScanner) Detect(ip string) ([]*Device , error){
 			return nil,errors.New("input ip is not standard")
 	}
 	retList := []*Device{}
+	//TODO正是上线记得把这两句注掉
+	ownMac,_,_ := s.Mac(ip)
+	retList = append(retList,&Device{ip,ownMac.String(),consts.TYPE_OWN_DEVICE} )
 	//轮询ip
 	ipFormat := ip[:strings.LastIndex(ip, ".")+1] + "%d"
 	for i := 1; i <= 255; i++ {

@@ -1,8 +1,9 @@
 {{template "header" .}}
 <script type="text/javascript">
-    function show() {
-        var interfaceIp = document.getElementById("interfaceT").rows[1].cells[2].innerHTML;
-        $("#toPageList").attr("href","/iplist?ip="+interfaceIp);
+    function jumptoiplist(obj) {
+        var rowindex = obj.parentNode.parentNode.parentNode.rowIndex
+        var interfaceIp = document.getElementById("interfaceT").rows[rowindex].cells[2].innerHTML;
+        $("#"+obj.id).attr("href", "/iplist?ip=" + interfaceIp);
     }
 </script>
         <div class="container">
@@ -30,10 +31,9 @@
                     {{end}}
                     <td>
                         <button class="btn-flat waves-effect waves-light green">
-                            <a href="/iplist" id="toPageList" onclick="show()">
-                            查看<i class="material-icons black">send</i>
+                            <a href="/iplist" id={{$k}} onclick="jumptoiplist(this)" class="yellow-text">查看<i class="material-icons">send</i>
                             </a>
-                            <script>show()</script>
+                            {{/*<script>jumptoiplist()</script>*/}}
                         </button>
                     </td>
                 </tr>

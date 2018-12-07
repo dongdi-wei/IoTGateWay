@@ -2,10 +2,11 @@ package service
 
 import (
 	"IoTGateWay/base"
-	"IoTGateWay/consts"
+	"fmt"
 	"github.com/gin-gonic/gin"
 	"os"
 	"path/filepath"
+	"strings"
 )
 
 func HttpServer() {
@@ -29,7 +30,7 @@ func loadRouters(router *gin.Engine) {
 
 }
 func test(c *gin.Context) {
-	c.HTML(200, "test.html", gin.H{})
+	drawResult(c.Writer)
 }
 func welcome(c *gin.Context) {
 	c.HTML(200, "welcome.html", gin.H{})
@@ -37,31 +38,33 @@ func welcome(c *gin.Context) {
 
 func result(c *gin.Context) {
 	c.HTML(200, "result.html", gin.H{})
-	drawResult(c.Writer)
 }
 func iplist(c *gin.Context) {
-	//ip := c.Query("ip")
+	ip := strings.Replace(c.Query("ip")," ","",-1)
+	Logger.Info("iplist receive ip:%s",ip)
 	Tbody := []string{"ip", "mac"}
-	deviceTable := map[int64]map[string]string{}
-	for i, k := range Scanner.Devices {
-		if k.Type != consts.TYPE_OWN_DEVICE {
-			deviceTable[int64(i)] = map[string]string{"ip": k.Ip, "mac": k.Mac}
+	deviceTable := map[int]map[string]string{}
+	devices,err := Scanner.Detect(ip)
+	if err != nil {
+		Logger.Error("gateway web server iplist call scanner.Detect error:%v",err)
+		c.HTML(200, "error.html", gin.H{
+			"errorMsg":fmt.Sprintf("gateway web server iplist call scanner.Detect error:%v",err),
+		})
+	}else {
+		for i, k := range devices {
+			//if k.Type != consts.TYPE_OWN_DEVICE {
+			//	deviceTable[i] = map[string]string{"ip": k.Ip, "mac": k.Mac}
+			//}
+			if k.Mac == ""{
+				k.Mac = "00.00.00.00"
+			}
+			deviceTable[i] = map[string]string{"ip": k.Ip, "mac": k.Mac}
 		}
+		c.HTML(200, "iplist.html", gin.H{
+			"deviceTable": deviceTable,
+			"Tbody":       Tbody,
+		})
 	}
-	c.HTML(200, "iplist.html", gin.H{
-		"deviceTable": deviceTable,
-		"Tbody":       Tbody,
-	})
-	//for k,v := range c.Request.GetBody{
-	//	if k == "ip"{
-	//		c.HTML(200,"iplist.html",gin.H{
-	//			"deviceTable":v,
-	//			"deviceKey":k,
-	//		})
-	//	}else {
-	//		c.HTML(200,"iplist.html",gin.H{})
-	//	}
-	//}
 }
 
 func login(c *gin.Context) {
@@ -73,9 +76,19 @@ func deviceInfo(c *gin.Context) {
 }
 
 func interfaces(c *gin.Context) {
+	interfaceList,err := Scanner.InterFaces()
+	if err != nil {
+		Logger.Error("gateway web server interfaces call scanner.InterFace error:%v",err)
+		c.HTML(200, "error.html", gin.H{
+			"errorMsg":fmt.Sprintf("gateway web server interfaces call scanner.InterFace error:%v",err),
+		})
+	}
+	interfaceMap := make(map[int]map[string]string)
+	for i,k := range interfaceList{
+		interfaceMap[i] = map[string]string{"inter": k.Name, "ip": k.Ip, "mac": k.Mac}
+	}
 	c.HTML(200, "interfaces.html", gin.H{
-		"interfaceTable": map[int64]map[string]string{1: map[string]string{"inter": "wlan0", "ip": "10.3.8.211", "mac": "00.00.00.00"},
-			2: map[string]string{"inter": "wlan1", "ip": "10.3.8.212", "mac": "00.00.00.01"}},
+		"interfaceTable": interfaceMap,
 		"Tbody": []string{"inter", "ip", "mac"},
 	})
 }

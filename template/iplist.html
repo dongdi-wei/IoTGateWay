@@ -1,4 +1,11 @@
 {{template "header" .}}
+<script type="text/javascript">
+    function jumptoresult(obj) {
+        var rowindex = obj.parentNode.parentNode.parentNode.rowIndex
+        var deviceMac = document.getElementById("iplistT").rows[rowindex].cells[2].innerHTML;
+        $("#"+obj.id).attr("href", "/result?mac=" + deviceMac);
+    }
+</script>
 <div class="container">
     <h2>物联网安全网关</h2>
     <hr/>
@@ -13,20 +20,23 @@
         </tr>
         </thead>
         <tbody>
-        <h5>{{.deviceTable}}</h5>
-        {{/*{{range $k,$interf := .deviceTable}}*/}}
-        {{/*<tr>*/}}
-            {{/*<td>{{$k}}</td>*/}}
-        {{/*{{range $.Tbody}}*/}}
-            {{/*<td>*/}}
-            {{/*{{index $interf .}}*/}}
-            {{/*</td>*/}}
-        {{/*{{end}}*/}}
-            {{/*<td>*/}}
-                {{/*<button class="btn-flat waves-effect waves-light green" onclick="show()">查看<i class="material-icons right">send</i></button>*/}}
-            {{/*</td>*/}}
-        {{/*</tr>*/}}
-        {{/*{{end}}*/}}
+        {{range $k,$deviceInfo := .deviceTable}}
+        <tr>
+            <td>{{$k}}</td>
+        {{range $.Tbody}}
+            <td>
+            {{index $deviceInfo .}}
+            </td>
+        {{end}}
+            <td>
+                <button class="btn-flat waves-effect waves-light green">
+                    <a href="/result" id={{$k}} onclick="jumptoresult(this)" class="yellow-text">查看<i class="material-icons">send</i>
+                    </a>
+                    {{/*<script>jumptoiplist()</script>*/}}
+                </button>
+            </td>
+        </tr>
+        {{end}}
         </tbody>
     </table>
     <hr/>
