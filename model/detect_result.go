@@ -14,7 +14,7 @@ var (
 	DetectResultServiceHandler *DetectResultService
 	dResultonce sync.Once)
 type DetectResult struct {
-	DeviceID 		int64 		`gorm:"column:deviceid"`		//设置DeviceID对应在数据库表里的列为deviceid,设备id，用于区分设备，为0时表示未知设备
+	DeviceID 		uint64 		`gorm:"column:deviceid"`		//设置DeviceID对应在数据库表里的列为deviceid,设备id，用于区分设备，为0时表示未知设备
 	DeviceName  	string		`gorm:"column:devicename"`		//设备名称
 	DeteDimension	string		`gorm:"column:detectiond"`		//检测维度
 	DeteRulesID		int			`gorm:"column:detection_rules_id"`//使用的检测规则
@@ -63,13 +63,23 @@ func (d *DetectResultService)GetAllInfo() []*DetectResult{
 }
 
 //查询一个device id下的所有记录
-func (d *DetectResultService)GetResultByDeviceID(deviceID int) []*DetectResult{
+func (d *DetectResultService)GetResultByDeviceID(deviceID int) ([]*DetectResult,error){
 	var DecResuList []*DetectResult
 	err := DBIot.Where("deviceid=?",deviceID).Find(&DecResuList).Error
 	if err != nil{
 		Logger.Error(fmt.Sprintf("DetectResultService GetResultByDeviceID error :%v",err))
 	}
-	return DecResuList
+	return DecResuList,err
+}
+
+//查询一个device id下的所有记录
+func (d *DetectResultService)GetResultByDetectionID(detectionID int) ([]*DetectResult,error){
+	var DecResuList []*DetectResult
+	err := DBIot.Where("detection_id=?",detectionID).Find(&DecResuList).Error
+	if err != nil{
+		Logger.Error(fmt.Sprintf("DetectResultService GetResultByDetectionID error :%v",err))
+	}
+	return DecResuList,err
 }
 
 //根据SourceMark查询DeviceList

@@ -6,6 +6,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"os"
 	"path/filepath"
+	"strconv"
 	"strings"
 )
 
@@ -25,19 +26,89 @@ func loadRouters(router *gin.Engine) {
 	router.GET("/deviceInfo/:ip", deviceInfo)
 	router.POST("/login", login)
 	router.GET("/iplist", iplist)
+	router.GET("/detHistory", detectHistory)
 	router.GET("/result", result)
 	router.GET("/test", test)
-
+	router.GET("/visualization", visualize)
 }
 func test(c *gin.Context) {
-	drawResult(c.Writer)
+}
+func detectHistory(c *gin.Context) {
+	mac := strings.Replace(c.Query("mac")," ","",-1)
+	deviceId,err := Wraper.WrapStringMacToInt64(mac)
+	if err != nil {
+		Logger.Error("gateway web server detectHistory call Wraper.WrapStringMacToInt64 error:%v",err)
+		c.HTML(200, "error.html", gin.H{
+			"errorMsg":fmt.Sprintf("gateway web server detectHistory call Wraper.WrapStringMacToInt64 error:%v",err),
+		})
+		return
+	}
+	deviceRules,err := DevRulesSer.GetDeviceRuleByDeviceID(deviceId)
+	if err != nil {
+		Logger.Error("gateway web server detectHistory call DevRulesSer.GetDeviceRuleByDeviceID error:%v",err)
+		c.HTML(200, "error.html", gin.H{
+			"errorMsg":fmt.Sprintf("gateway web server detectHistory call DevRulesSer.GetDeviceRuleByDeviceID error:%v",err),
+		})
+		return
+	}
+	Tbody := []string{"detectionId","detectRules"}
+	historyTable := map[int]map[string]string{}
+	for i,k := range deviceRules {
+		historyTable[i] = map[string]string{"detectionId": k.DetectionID,"detectRules":k.Detectrules}
+	}
+	c.HTML(200, "history.html", gin.H{
+			"DeviceID":    deviceId,
+			"historyTable": historyTable,
+			"Tbody":       Tbody,
+		})
+
+}
+func visualize(c *gin.Context) {
+	DetectionID := strings.Replace(c.Query("DetectionID")," ","",-1)
+	deteId, err := strconv.Atoi(DetectionID)
+	if err != nil {
+		Logger.Error("gateway web server visualize input device id :%s is not int error:%v", DetectionID,err)
+		return
+	}
+	drawResult(c.Writer,deteId)
 }
 func welcome(c *gin.Context) {
 	c.HTML(200, "welcome.html", gin.H{})
 }
 
 func result(c *gin.Context) {
-	c.HTML(200, "result.html", gin.H{})
+	detectionID := strings.Replace(c.Query("detectionID")," ","",-1)
+	deteId, err := strconv.Atoi(detectionID)
+	if err != nil {
+		Logger.Error("gateway web server result input device id :%s is not int error:%v", detectionID,err)
+		c.HTML(200, "error.html", gin.H{
+			"errorMsg":fmt.Sprintf("gateway web server result input device id :%s is not int error:%v", detectionID,err),
+		})
+		return
+	}
+	rule,err := DevRulesSer.GetDeviceRuleByDetectionID(deteId)
+	if err != nil {
+		Logger.Error("gateway web server result call DevRulesSer.GetDeviceRuleByDetectionID error:%v",err)
+		c.HTML(200, "error.html", gin.H{
+			"errorMsg":fmt.Sprintf("gateway web server result call DevRulesSer.GetDeviceRuleByDetectionID error:%v",err),
+		})
+		return
+	}
+	results,err := DetResultSer.GetResultByDeviceID(deteId)
+	if err != nil || results == nil{
+		Logger.Error("gateway web server result call DetResultSer.GetResultByDeviceID error:%v",err)
+		c.HTML(200, "error.html", gin.H{
+			"errorMsg":fmt.Sprintf("gateway web server result call DetResultSer.GetResultByDeviceID error:%v",err),
+		})
+		return
+	}
+	c.HTML(200, "result.html", gin.H{
+			"DeviceID": rule.DeviceID,
+			"DeviceName":rule.DeviceName,
+			"DetectRules":rule.Detectrules,
+			"DetectionID":rule.DetectionID,
+	})
+
 }
 func iplist(c *gin.Context) {
 	ip := strings.Replace(c.Query("ip")," ","",-1)

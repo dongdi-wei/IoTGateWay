@@ -6,7 +6,7 @@ import (
 )
 
 func TestWrape_WrapStringMacToInt64(t *testing.T) {
-	mac := `01-23-45-67-89-ab`
+	mac := `00:00:00:00`
 	Init()
 	fmt.Println(Wraper.WrapStringMacToInt64(mac))
 }

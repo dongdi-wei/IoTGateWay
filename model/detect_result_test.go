@@ -18,9 +18,13 @@ func TestDetectResultService_GetAllInfo(t *testing.T)  {
 
 func TestDetectResultService_InsertResult(t *testing.T)  {
 	Init()
-	r := &DetectResult{DeviceID:0,CreateTime:time.Now(),ModifyTime:time.Now()}
-	err := GetDetectResultHandler().InsertResult(r)
-	if err != nil {
-		fmt.Println(err)
+	for i:= 0;i<640;i++{
+		r := &DetectResult{DeviceID:0,DeviceName:"test",DetectionID:"1",CreateTime:time.Now(),ModifyTime:time.Now()}
+		if i == 103 || i == 149 || i == 390 {
+			r.ResultMark = 2
+		}else {
+			r.ResultMark = 1
+		}
+		GetDetectResultHandler().InsertResult(r)
 	}
 }

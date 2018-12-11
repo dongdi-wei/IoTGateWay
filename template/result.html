@@ -1,13 +1,33 @@
 {{template "header" .}}
+<script type="text/javascript">
+    window.onload = function (){
+        var bigImg = document.createElement("img");		//创建一个img元素
+        var myDiv = document.getElementById('deviceResultGif'); //获得dom对象
+        bigImg.src="/visualization?DetectionID="+myDiv.title;   //给img元素的src属性赋值
+        myDiv.appendChild(bigImg);  	//为dom添加子元素img
+    };
+</script>
 <div class="container">
     <h2>检测结果</h2>
     <hr/>
     <div class="row">
         <div class="col s6 m6 l6 yellow">
-            <p>device info</p>
+            <table class="responsive-table">
+                <thead>
+                <tr>
+                    <th>属性</th><th>DeviceID</th>
+                    <th>DeviceName</th><th>DetectionID</th><th>DetectRules</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>值</td><td>{{.DeviceID}}</td><td>{{.DeviceName}}</td>
+                    <td>{{.DetectionID}}</td><td>{{.DetectRules}}</td>
+                </tr>
+                </tbody>
+            </table>
         </div>
-        <div class="col m6 l6 grey" type="">
-            <img src="/test" alt="" />
+        <div class="col m6 l6 grey" type="" id="deviceResultGif" title="{{.DetectionID}}">
         </div>
     </div>
     <hr/>

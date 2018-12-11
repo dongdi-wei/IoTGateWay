@@ -1,9 +1,9 @@
 {{template "header" .}}
 <script type="text/javascript">
-    function jumptoresult(obj) {
+    function jumptohistory(obj) {
         var rowindex = obj.parentNode.parentNode.parentNode.rowIndex
         var deviceMac = document.getElementById("iplistT").rows[rowindex].cells[2].innerHTML;
-        $("#"+obj.id).attr("href", "/result?mac=" + deviceMac);
+        $("#"+obj.id).attr("href", "/detHistory?mac=" + deviceMac);
     }
 </script>
 <div class="container">
@@ -30,7 +30,7 @@
         {{end}}
             <td>
                 <button class="btn-flat waves-effect waves-light green">
-                    <a href="/result" id={{$k}} onclick="jumptoresult(this)" class="yellow-text">查看<i class="material-icons">send</i>
+                    <a href="/detHistory" id={{$k}} onclick="jumptohistory(this)" class="yellow-text">查看<i class="material-icons">send</i>
                     </a>
                     {{/*<script>jumptoiplist()</script>*/}}
                 </button>

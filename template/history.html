@@ -1,0 +1,44 @@
+{{template "header" .}}
+<script type="text/javascript">
+    function jumptoResult(obj) {
+        var rowindex = obj.parentNode.parentNode.parentNode.rowIndex
+        var detectionID = document.getElementById("historyT").rows[rowindex].cells[1].innerHTML;
+        $("#"+obj.id).attr("href", "/result?detectionID=" + detectionID);
+    }
+</script>
+<div class="container">
+    <h2>物联网安全网关</h2>
+    <hr/>
+    <h4>设备{{.DeviceID}}检测历史信息</h4>
+    <table id = "historyT" class="striped bordered">
+        <thead>
+        <tr>
+            <th>序号</th>
+            <th>检测订单号</th>
+            <th>检测规则</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{range $k,$historyInfo := .historyTable}}
+        <tr>
+            <td>{{$k}}</td>
+        {{range $.Tbody}}
+            <td>
+            {{index $historyInfo .}}
+            </td>
+        {{end}}
+            <td>
+                <button class="btn-flat waves-effect waves-light green">
+                    <a href="/result" id={{$k}} onclick="jumptoResult(this)" class="yellow-text">查看<i class="material-icons">send</i>
+                    </a>
+                {{/*<script>jumptoiplist()</script>*/}}
+                </button>
+            </td>
+        </tr>
+        {{end}}
+        </tbody>
+    </table>
+    <hr/>
+</div>
+{{template "footer" }}

@@ -51,7 +51,7 @@ func (w *Wrape)WrapJson2DeviceStatus(jsonDevSta []byte) (*model.DeviceStatus,err
 		return &retStatus, err
 	}
 	//todo error 都没有处理
-	retStatus.TTRuntime, _ = strconv.ParseUint(jsonStatus.TTRuntime,10,0)
+	retStatus.TTRuntime, _ = strconv.ParseFloat(jsonStatus.TTRuntime,64)
 	retStatus.DeviceName = fmt.Sprintf("testDevice%s",jsonStatus.DeviceID[len(jsonStatus.DeviceID)-3:])
 	retStatus.CpuUseRate,_ = strconv.ParseFloat(jsonStatus.CpuUseRate,64)
 	retStatus.CpuAvailable,_ = strconv.ParseFloat(jsonStatus.CpuAvailable,64)
