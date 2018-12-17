@@ -16,6 +16,7 @@ var (
 	Scanner      *NetScanner
 	IdGenSer     *model.IdGenService
 	FuncSer 	 Funcs
+	AlarmSer     *Alarm
 )
 
 func Init() {
@@ -30,6 +31,7 @@ func Init() {
 	if err := BindRuleIdAndFunc();err != nil {
 		Logger.Error("BindRuleIdAndFunc error:%v",err)
 	}
+	AlarmSer     = GetAlrmHandler()
 	Logger.Info("service init success")
 }
 

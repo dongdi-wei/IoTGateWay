@@ -43,3 +43,9 @@ const (
 	MarkNomal 		= 1	 //正常标记
 	MarkAbnormal 	= 2 //异常标记
 )
+
+const (
+	Mailuser 	 = ``	//企业邮箱用户名
+	Mailpassword = ``   //企业邮箱密码
+	Mailhosts	 = `mail3.bupt.edu.cn:25`	//
+)

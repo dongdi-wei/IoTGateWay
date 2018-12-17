@@ -2,325 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4f065baa-b1dc-466f-bbe0-31b2499e16a4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/model/id_gen.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/reflection.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/alarm.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/mail.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/consts/const.go" beforeDir="false" afterPath="$PROJECT_DIR$/consts/const.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/detect_result.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/detect_result.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/detect_result_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/detect_result_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/device_rules.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/device_rules.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/device_rules_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/device_rules_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/device_status.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/device_status.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/settings.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/settings.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/service/config.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/data_detect.go" beforeDir="false" afterPath="$PROJECT_DIR$/service/data_detect.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/data_visualization.go" beforeDir="false" afterPath="$PROJECT_DIR$/service/data_visualization.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/gateway_web_server.go" beforeDir="false" afterPath="$PROJECT_DIR$/service/gateway_web_server.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/rule_calculator.go" beforeDir="false" afterPath="$PROJECT_DIR$/service/rule_calculator.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/history.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/history.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/blas/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/blas/blas.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/blas/blas64/blas64.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/blas/blas64/conv.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/blas/blas64/conv_symmetric.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/blas/blas64/doc.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/blas/conversions.bash" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/blas/doc.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/blas/gonum/cmplx.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/blas/gonum/dgemm.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/blas/gonum/doc.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/blas/gonum/errors.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/blas/gonum/gemv.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/blas/gonum/gonum.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/blas/gonum/level1cmplx128.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/blas/gonum/level1double.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/blas/gonum/level1double_ddot.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/blas/gonum/level1single.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/blas/gonum/level1single_dsdot.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/blas/gonum/level1single_sdot.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/blas/gonum/level1single_sdsdot.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/blas/gonum/level2cmplx128.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/blas/gonum/level2double.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/blas/gonum/level2single.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/blas/gonum/level3double.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/blas/gonum/level3single.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/blas/gonum/sgemm.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/blas/gonum/single_precision.bash" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/floats/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/floats/doc.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/floats/floats.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/internal/asm/c128/axpyinc_amd64.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/internal/asm/c128/axpyincto_amd64.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/internal/asm/c128/axpyunitary_amd64.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/internal/asm/c128/axpyunitaryto_amd64.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/internal/asm/c128/doc.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/internal/asm/c128/dotcinc_amd64.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/internal/asm/c128/dotcunitary_amd64.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/internal/asm/c128/dotuinc_amd64.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/internal/asm/c128/dotuunitary_amd64.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/internal/asm/c128/dscalinc_amd64.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/internal/asm/c128/dscalunitary_amd64.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/internal/asm/c128/scal.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/internal/asm/c128/scalUnitary_amd64.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/internal/asm/c128/scalinc_amd64.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/internal/asm/c128/stubs_amd64.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/internal/asm/c128/stubs_noasm.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/internal/asm/f32/axpyinc_amd64.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/internal/asm/f32/axpyincto_amd64.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/internal/asm/f32/axpyunitary_amd64.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/internal/asm/f32/axpyunitaryto_amd64.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/internal/asm/f32/ddotinc_amd64.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/internal/asm/f32/ddotunitary_amd64.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/internal/asm/f32/doc.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/internal/asm/f32/dotinc_amd64.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/internal/asm/f32/dotunitary_amd64.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/internal/asm/f32/ge_amd64.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/internal/asm/f32/ge_amd64.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/internal/asm/f32/ge_noasm.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/internal/asm/f32/scal.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/internal/asm/f32/stubs_amd64.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/internal/asm/f32/stubs_noasm.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/internal/asm/f64/abssum_amd64.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/internal/asm/f64/abssuminc_amd64.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/internal/asm/f64/add_amd64.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/internal/asm/f64/addconst_amd64.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/internal/asm/f64/axpy.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/internal/asm/f64/axpyinc_amd64.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/internal/asm/f64/axpyincto_amd64.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/internal/asm/f64/axpyunitary_amd64.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/internal/asm/f64/axpyunitaryto_amd64.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/internal/asm/f64/cumprod_amd64.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/internal/asm/f64/cumsum_amd64.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/internal/asm/f64/div_amd64.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/internal/asm/f64/divto_amd64.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/internal/asm/f64/doc.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/internal/asm/f64/dot.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/internal/asm/f64/dot_amd64.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/internal/asm/f64/ge_amd64.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/internal/asm/f64/ge_noasm.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/internal/asm/f64/gemvN_amd64.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/internal/asm/f64/gemvT_amd64.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/internal/asm/f64/ger_amd64.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/internal/asm/f64/l1norm_amd64.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/internal/asm/f64/linfnorm_amd64.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/internal/asm/f64/scal.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/internal/asm/f64/scalinc_amd64.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/internal/asm/f64/scalincto_amd64.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/internal/asm/f64/scalunitary_amd64.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/internal/asm/f64/scalunitaryto_amd64.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/internal/asm/f64/stubs_amd64.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/internal/asm/f64/stubs_noasm.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/internal/asm/f64/sum_amd64.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/internal/math32/doc.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/internal/math32/math.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/internal/math32/signbit.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/internal/math32/sqrt.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/internal/math32/sqrt_amd64.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/internal/math32/sqrt_amd64.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/doc.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dbdsqr.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dgebak.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dgebal.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dgebd2.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dgebrd.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dgecon.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dgeev.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dgehd2.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dgehrd.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dgelq2.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dgelqf.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dgels.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dgeql2.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dgeqp3.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dgeqr2.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dgeqrf.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dgerq2.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dgerqf.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dgesvd.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dgetf2.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dgetrf.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dgetri.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dgetrs.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dggsvd3.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dggsvp3.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dhseqr.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dlabrd.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dlacn2.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dlacpy.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dlae2.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dlaev2.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dlaexc.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dlags2.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dlahqr.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dlahr2.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dlaln2.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dlange.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dlanst.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dlansy.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dlantr.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dlanv2.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dlapll.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dlapmt.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dlapy2.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dlaqp2.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dlaqps.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dlaqr04.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dlaqr1.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dlaqr23.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dlaqr5.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dlarf.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dlarfb.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dlarfg.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dlarft.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dlarfx.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dlartg.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dlas2.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dlascl.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dlaset.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dlasq1.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dlasq2.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dlasq3.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dlasq4.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dlasq5.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dlasq6.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dlasr.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dlasrt.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dlassq.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dlasv2.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dlaswp.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dlasy2.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dlatrd.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dlatrs.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/doc.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dorg2l.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dorg2r.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dorgbr.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dorghr.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dorgl2.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dorglq.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dorgql.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dorgqr.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dorgtr.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dorm2r.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dormbr.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dormhr.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dorml2.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dormlq.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dormqr.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dormr2.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dpbtf2.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dpocon.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dpotf2.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dpotrf.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dpotrs.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/drscl.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dsteqr.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dsterf.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dsyev.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dsytd2.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dsytrd.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dtgsja.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dtrcon.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dtrevc3.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dtrexc.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dtrti2.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dtrtri.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/dtrtrs.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/errors.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/general.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/iladlc.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/iladlr.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/ilaenv.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/gonum/iparmq.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/lapack.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/lapack64/doc.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/lapack/lapack64/lapack64.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/mat/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/mat/band.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/mat/cholesky.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/mat/cmatrix.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/mat/consts.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/mat/dense.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/mat/dense_arithmetic.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/mat/diagonal.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/mat/doc.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/mat/eigen.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/mat/errors.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/mat/format.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/mat/gsvd.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/mat/hogsvd.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/mat/index_bound_checks.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/mat/index_no_bound_checks.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/mat/inner.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/mat/io.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/mat/lq.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/mat/lu.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/mat/matrix.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/mat/offset.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/mat/offset_appengine.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/mat/pool.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/mat/product.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/mat/qr.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/mat/shadow.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/mat/solve.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/mat/svd.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/mat/symband.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/mat/symmetric.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/mat/triangular.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/mat/triband.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/gonum/mat/vector.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/plot/AUTHORS" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/plot/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/plot/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/plot/align.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/plot/axis.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/plot/doc.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/plot/go.mod" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/plot/go.sum" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/plot/labelling.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/plot/legend.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/plot/palette/hsva.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/plot/palette/palette.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/plot/palette/reverse.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/plot/plot.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/plot/plotter/barchart.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/plot/plotter/boxplot.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/plot/plotter/colorbar.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/plot/plotter/conrec.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/plot/plotter/contour.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/plot/plotter/errbars.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/plot/plotter/functions.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/plot/plotter/glyphbox.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/plot/plotter/grid.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/plot/plotter/heat.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/plot/plotter/histogram.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/plot/plotter/image.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/plot/plotter/johnson.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/plot/plotter/labels.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/plot/plotter/line.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/plot/plotter/palettethumbnailer.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/plot/plotter/plotter.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/plot/plotter/polygon.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/plot/plotter/quartile.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/plot/plotter/sankey.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/plot/plotter/scatter.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/plot/plotter/volcano" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/plot/plotter/volcano_example.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/plot/tools/bezier/bezier.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/plot/vg/draw/canvas.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/plot/vg/font.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/plot/vg/font_syscall.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/plot/vg/fonts/cp1252.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/plot/vg/fonts/fonts.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/plot/vg/fonts/liberation_fonts_generated.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/plot/vg/geom.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/plot/vg/len.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/plot/vg/vg.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/plot/vg/vgeps/vgeps.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/plot/vg/vgimg/vgimg.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/plot/vg/vgpdf/vgpdf.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/gonum.org/v1/plot/vg/vgsvg/vgsvg.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/materialize.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/materialize.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -350,39 +39,41 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="gitignore" value="2" />
-          <entry key="go" value="175" />
+          <entry key="gitignore" value="3" />
+          <entry key="go" value="186" />
           <entry key="html" value="37" />
           <entry key="js" value="2" />
           <entry key="log" value="14" />
+          <entry key="md" value="1" />
           <entry key="png" value="1" />
           <entry key="s" value="1" />
+          <entry key="settings" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Go" value="175" />
+          <entry key="Go" value="186" />
           <entry key="HTML" value="37" />
           <entry key="Image" value="1" />
           <entry key="JavaScript" value="2" />
-          <entry key="PLAIN_TEXT" value="16" />
+          <entry key="PLAIN_TEXT" value="19" />
           <entry key="x86 Plan9 Assembly" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="gitignore" value="5" />
-          <entry key="go" value="17230" />
+          <entry key="gitignore" value="25" />
+          <entry key="go" value="17709" />
           <entry key="html" value="3089" />
           <entry key="js" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Go" value="17230" />
+          <entry key="Go" value="17709" />
           <entry key="HTML" value="3089" />
           <entry key="JavaScript" value="1" />
-          <entry key="PLAIN_TEXT" value="5" />
+          <entry key="PLAIN_TEXT" value="25" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.go.postfix.template.usages.trigger">
@@ -405,38 +96,71 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/service/reflection.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="625">
+              <caret line="28" column="15" selection-start-line="28" selection-start-column="15" selection-end-line="28" selection-end-column="15" />
+              <folding>
+                <element signature="e#17#48#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/service/iot_device_control.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="144">
+              <caret line="41" column="5" lean-forward="true" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/service/gateway_web_server.go">
+        <entry file="file://$PROJECT_DIR$/consts/const.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="191">
-              <caret line="167" column="13" lean-forward="true" selection-start-line="167" selection-start-column="13" selection-end-line="167" selection-end-column="13" />
+            <state relative-caret-position="179">
+              <caret line="50" column="1" lean-forward="true" selection-start-line="50" selection-start-column="1" selection-end-line="50" selection-end-column="1" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/service/data_visualization.go">
+        <entry file="file://$PROJECT_DIR$/model/settings.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="333">
-              <caret line="97" column="44" selection-start-line="96" selection-start-column="33" selection-end-line="97" selection-end-column="44" />
+            <state relative-caret-position="225">
+              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/template/history.html">
+        <entry file="file://$PROJECT_DIR$/service/alarm.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1275">
-              <caret line="51" column="56" selection-start-line="51" selection-start-column="56" selection-end-line="51" selection-end-column="56" />
+            <state relative-caret-position="54">
+              <caret line="25" column="35" lean-forward="true" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
+              <folding>
+                <element signature="e#17#65#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/template/result.html">
+        <entry file="file://C:/Go/src/net/smtp/auth.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="196">
+              <caret line="94" column="18" selection-start-line="94" selection-start-column="18" selection-end-line="94" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/service/config.go">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="125">
-              <caret line="8" column="9" lean-forward="true" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
+              <caret line="21" column="13" lean-forward="true" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -454,28 +178,13 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/model/detect_result.go">
+        <entry file="file://$PROJECT_DIR$/service/alarm_test.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="127">
-              <caret line="76" column="35" lean-forward="true" selection-start-line="76" selection-start-column="35" selection-end-line="76" selection-end-column="35" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/service/data_gather.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="8" column="23" lean-forward="true" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/model/detect_result_test.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="34" column="58" selection-start-line="34" selection-start-column="58" selection-end-line="34" selection-end-column="58" />
+            <state relative-caret-position="104">
+              <caret line="9" column="12" lean-forward="true" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
+              <folding>
+                <element signature="e#17#45#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -498,18 +207,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/sevice/data_gather.go" />
-        <option value="$PROJECT_DIR$/consts/logConst.go" />
-        <option value="$PROJECT_DIR$/consts/log_const.go" />
-        <option value="$PROJECT_DIR$/model/config.go" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/base/log.go" />
-        <option value="$PROJECT_DIR$/model/settings.go" />
         <option value="$PROJECT_DIR$/IotGateWay.log" />
         <option value="$PROJECT_DIR$/wraper/config.go" />
         <option value="$PROJECT_DIR$/service/data_gather.go" />
         <option value="$PROJECT_DIR$/model/device_status_test.go" />
-        <option value="$PROJECT_DIR$/service/iot_device_control.go" />
         <option value="$PROJECT_DIR$/sever.go" />
         <option value="$PROJECT_DIR$/base/config.go" />
         <option value="$PROJECT_DIR$/template/navbar.html" />
@@ -535,11 +237,9 @@
         <option value="$PROJECT_DIR$/service/data_visualization_test.go" />
         <option value="$PROJECT_DIR$/model/id_gen_test.go" />
         <option value="$PROJECT_DIR$/model/id_gen.go" />
-        <option value="$PROJECT_DIR$/service/config.go" />
         <option value="$PROJECT_DIR$/model/device_rules.go" />
         <option value="$PROJECT_DIR$/model/device_status.go" />
         <option value="$PROJECT_DIR$/service/rule_calculator.go" />
-        <option value="$PROJECT_DIR$/consts/const.go" />
         <option value="$PROJECT_DIR$/model/device_rules_test.go" />
         <option value="$PROJECT_DIR$/service/data_detect_test.go" />
         <option value="$PROJECT_DIR$/service/reflection.go" />
@@ -549,6 +249,15 @@
         <option value="$PROJECT_DIR$/model/detect_result.go" />
         <option value="$PROJECT_DIR$/model/detect_result_test.go" />
         <option value="$PROJECT_DIR$/service/gateway_web_server.go" />
+        <option value="$PROJECT_DIR$/service/iot_device_control.go" />
+        <option value="$PROJECT_DIR$/service/config.go" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/service/settings.go" />
+        <option value="$PROJECT_DIR$/service/mail.go" />
+        <option value="$PROJECT_DIR$/service/alarm.go" />
+        <option value="$PROJECT_DIR$/service/alarm_test.go" />
+        <option value="$PROJECT_DIR$/model/settings.go" />
+        <option value="$PROJECT_DIR$/consts/const.go" />
       </list>
     </option>
   </component>
@@ -604,11 +313,6 @@
             <path>
               <item name="IoTGateWay" type="b2602c69:ProjectViewProjectNode" />
               <item name="IoTGateWay" type="462c0819:PsiDirectoryNode" />
-              <item name="template" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="IoTGateWay" type="b2602c69:ProjectViewProjectNode" />
-              <item name="IoTGateWay" type="462c0819:PsiDirectoryNode" />
               <item name="vendor" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -658,7 +362,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Go Build.go build sever.go">
+  <component name="RunManager" selected="Go Test.TestAlarm_SendToMail in IoTGateWay/service">
     <configuration name="go build sever.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="IoTGateWay" />
       <working_directory value="$PROJECT_DIR$/" />
@@ -666,6 +370,17 @@
       <filePath value="$PROJECT_DIR$/sever.go" />
       <package value="IoTGateWay" />
       <directory value="$PROJECT_DIR$/" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestAlarm_SendToMail in IoTGateWay/service" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="IoTGateWay" />
+      <working_directory value="$PROJECT_DIR$/service" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="IoTGateWay/service" />
+      <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/" />
+      <pattern value="^TestAlarm_SendToMail$" />
       <method v="2" />
     </configuration>
     <configuration name="TestDetectDataByDetectionId in IoTGateWay/service" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
@@ -701,47 +416,24 @@
       <pattern value="^TestDeviceRulesService_InsertDeviceRule$" />
       <method v="2" />
     </configuration>
-    <configuration name="TestTestCall in IoTGateWay/service" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
-      <module name="IoTGateWay" />
-      <working_directory value="$PROJECT_DIR$/service" />
-      <framework value="gotest" />
-      <kind value="PACKAGE" />
-      <package value="IoTGateWay/service" />
-      <directory value="$PROJECT_DIR$/" />
-      <filePath value="$PROJECT_DIR$/" />
-      <pattern value="^TestTestCall$" />
-      <method v="2" />
-    </configuration>
     <list>
-      <item itemvalue="Go Test.TestTestCall in IoTGateWay/service" />
       <item itemvalue="Go Test.TestDeviceRulesService_InsertDeviceRule in IoTGateWay/model" />
       <item itemvalue="Go Test.TestDetectDataByDetectionId in IoTGateWay/service" />
       <item itemvalue="Go Build.go build sever.go" />
       <item itemvalue="Go Test.TestDetectResultService_GetResultByDetectionID in IoTGateWay/model" />
+      <item itemvalue="Go Test.TestAlarm_SendToMail in IoTGateWay/service" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Test.TestAlarm_SendToMail in IoTGateWay/service" />
         <item itemvalue="Go Build.go build sever.go" />
         <item itemvalue="Go Test.TestDetectResultService_GetResultByDetectionID in IoTGateWay/model" />
         <item itemvalue="Go Test.TestDetectDataByDetectionId in IoTGateWay/service" />
         <item itemvalue="Go Test.TestDeviceRulesService_InsertDeviceRule in IoTGateWay/model" />
-        <item itemvalue="Go Test.TestTestCall in IoTGateWay/service" />
       </list>
     </recent_temporary>
   </component>
   <component name="TestHistory">
-    <history-entry file="TestDetectDataByDetectionId_in_IoTGateWay_service - 2018.12.13 at 23h 54m 18s.xml">
-      <configuration name="TestDetectDataByDetectionId in IoTGateWay/service" configurationId="GoTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="TestDetectDataByDetectionId_in_IoTGateWay_service - 2018.12.13 at 23h 55m 09s.xml">
-      <configuration name="TestDetectDataByDetectionId in IoTGateWay/service" configurationId="GoTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="TestDetectDataByDetectionId_in_IoTGateWay_service - 2018.12.13 at 23h 55m 32s.xml">
-      <configuration name="TestDetectDataByDetectionId in IoTGateWay/service" configurationId="GoTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="TestDetectDataByDetectionId_in_IoTGateWay_service - 2018.12.17 at 10h 58m 28s.xml">
-      <configuration name="TestDetectDataByDetectionId in IoTGateWay/service" configurationId="GoTestRunConfiguration" />
-    </history-entry>
     <history-entry file="TestDetectDataByDetectionId_in_IoTGateWay_service - 2018.12.17 at 11h 02m 48s.xml">
       <configuration name="TestDetectDataByDetectionId in IoTGateWay/service" configurationId="GoTestRunConfiguration" />
     </history-entry>
@@ -760,6 +452,18 @@
     <history-entry file="TestDetectResultService_GetResultByDetectionID_in_IoTGateWay_model - 2018.12.17 at 15h 12m 57s.xml">
       <configuration name="TestDetectResultService_GetResultByDetectionID in IoTGateWay/model" configurationId="GoTestRunConfiguration" />
     </history-entry>
+    <history-entry file="TestAlarm_SendToMail_in_IoTGateWay_service - 2018.12.17 at 20h 53m 38s.xml">
+      <configuration name="TestAlarm_SendToMail in IoTGateWay/service" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestAlarm_SendToMail_in_IoTGateWay_service - 2018.12.17 at 21h 13m 39s.xml">
+      <configuration name="TestAlarm_SendToMail in IoTGateWay/service" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestAlarm_SendToMail_in_IoTGateWay_service - 2018.12.17 at 21h 16m 13s.xml">
+      <configuration name="TestAlarm_SendToMail in IoTGateWay/service" configurationId="GoTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="TestAlarm_SendToMail_in_IoTGateWay_service - 2018.12.17 at 21h 21m 19s.xml">
+      <configuration name="TestAlarm_SendToMail in IoTGateWay/service" configurationId="GoTestRunConfiguration" />
+    </history-entry>
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -774,12 +478,12 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49889135" visible="true" weight="0.19515885" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49889135" visible="true" weight="0.19515885" />
       <window_info id="Structure" order="1" sideWeight="0.50110865" side_tool="true" weight="0.21785174" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3295082" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.12131148" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3737705" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -821,61 +525,10 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/model/device_status_test.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="25" column="5" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/template/footer.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/template/header.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="14" column="30" lean-forward="true" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/IotGateWay.log" />
-    <entry file="file://$PROJECT_DIR$/test8.go" />
-    <entry file="file://$PROJECT_DIR$/template/welcome.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/template/error.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/template/interfaces.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="30" column="27" lean-forward="true" selection-start-line="30" selection-start-column="27" selection-end-line="30" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/template/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="50">
           <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/iot_device_control.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="35" column="22" selection-start-line="35" selection-start-column="22" selection-end-line="35" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -961,13 +614,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/consts/const.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1000">
-          <caret line="40" column="7" selection-start-line="40" selection-start-column="7" selection-end-line="40" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/model/device_rules.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1125">
@@ -989,27 +635,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/service/reflection.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="107">
-          <caret line="28" column="15" selection-start-line="28" selection-start-column="15" selection-end-line="28" selection-end-column="15" />
-          <folding>
-            <element signature="e#17#48#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/Go/src/runtime/asm_amd64.s">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="52">
           <caret line="521" selection-start-line="521" selection-end-line="521" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/config.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
-          <caret line="36" selection-start-line="36" selection-end-line="36" />
         </state>
       </provider>
     </entry>
@@ -1121,13 +750,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sever.go">
+    <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
-          <folding>
-            <element signature="e#14#92#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="100">
+          <caret line="4" column="7" lean-forward="true" selection-start-line="4" selection-start-column="7" selection-end-line="4" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/gateway_web_server.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="167" column="13" lean-forward="true" selection-start-line="167" selection-start-column="13" selection-end-line="167" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/iot_device_control.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="41" column="5" lean-forward="true" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -1138,10 +778,92 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/service/gateway_web_server.go">
+    <entry file="file://$PROJECT_DIR$/service/reflection.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="167" column="13" lean-forward="true" selection-start-line="167" selection-start-column="13" selection-end-line="167" selection-end-column="13" />
+        <state relative-caret-position="625">
+          <caret line="28" column="15" selection-start-line="28" selection-start-column="15" selection-end-line="28" selection-end-column="15" />
+          <folding>
+            <element signature="e#17#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/config.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="21" column="13" lean-forward="true" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/settings.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sever.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+          <folding>
+            <element signature="e#14#92#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Go/src/net/smtp/auth.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="94" column="18" selection-start-line="94" selection-start-column="18" selection-end-line="94" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/mail.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="500">
+          <caret line="20" column="38" selection-start-line="20" selection-start-column="38" selection-end-line="20" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/alarm.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="25" column="35" lean-forward="true" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
+          <folding>
+            <element signature="e#17#65#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/alarm_test.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="9" column="12" lean-forward="true" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
+          <folding>
+            <element signature="e#17#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/settings.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/consts/const.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="50" column="1" lean-forward="true" selection-start-line="50" selection-start-column="1" selection-end-line="50" selection-end-column="1" />
         </state>
       </provider>
     </entry>
