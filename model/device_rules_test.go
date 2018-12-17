@@ -1,13 +1,16 @@
 package model
 
 import (
+	"IoTGateWay/consts"
+	"fmt"
 	"testing"
 	"time"
 )
 
 func TestDeviceRulesService_InsertDeviceRule(t *testing.T) {
 	Init()
-	testDRule := &DeviceRule{0,"test","3||4","2",time.Now(),time.Now()}
+	id,_ := GetIdGenServiceHandler().Next(consts.DetectionIdTag)
+	testDRule := &DeviceRule{2,"Camera","(1|2)&3",fmt.Sprintf("%d",id.MaxId),time.Now(),time.Now()}
 	err := GetDeviceRulesServiceHandler().InsertDeviceRule(testDRule)
 	if err != nil {
 		Logger.Error("TestDeviceRulesService_InsertDeviceRule error:%v",err)

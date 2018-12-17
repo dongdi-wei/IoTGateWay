@@ -1,6 +1,6 @@
 package service
 
-import "strconv"
+import "errors"
 
 type StackNode struct {
 	Data interface{}
@@ -43,35 +43,39 @@ func (this *LinkStack) LookTop() interface{} {
 	return this.top.Data
 }
 
-func calculateRPN(datas []string,resultMap map[int]bool) bool {
+func calculateRPN(datas []string,resultMap map[string]bool) (bool,error) {
 	var stack LinkStack
 	stack.Init()
 	for i := 0; i < len(datas); i++ {
 		if isNumberString(datas[i]) {
-			if f, err := strconv.Atoi(datas[i]); err != nil {
-				panic("operatin process go wrong.")
-			} else {
-				stack.Push(resultMap[f])
+			if v,ok := resultMap[datas[i]];ok {
+				stack.Push(v)
 			}
 		} else {
 			p1 := stack.Pop().(bool)
 			p2 := stack.Pop().(bool)
-			p3 := Calculate(p2, p1, datas[i])
-			stack.Push(p3)
+			p3,err := Calculate(p2, p1, datas[i])
+			if err != nil {
+				return false,err
+			}else {
+				stack.Push(p3)
+			}
+
 		}
 	}
 	res := stack.Pop().(bool)
-	return res
+	return res,nil
 }
 
-func Calculate(a, b bool, operation string) bool {
+func Calculate(a, b bool, operation string) (bool,error) {
 	switch operation {
 	case "&":
-		return a && b
+		return a && b,nil
 	case "|":
-		return a || b
+		return a || b,nil
 	default:
-		panic("invalid operator")
+		Logger.Error("Calculate invalid operator:%s",operation)
+		return false,errors.New("invalid operator")
 	}
 }
 

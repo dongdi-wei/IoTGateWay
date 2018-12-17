@@ -14,6 +14,8 @@ var (
 	Logger       *base.LogIot
 	Wraper       *wraper.Wrape
 	Scanner      *NetScanner
+	IdGenSer     *model.IdGenService
+	FuncSer 	 Funcs
 )
 
 func Init() {
@@ -21,8 +23,13 @@ func Init() {
 	DetResultSer = model.GetDetectResultHandler()
 	DevRulesSer	 = model.GetDeviceRulesServiceHandler()
 	RuleSer		 = model.GetDetectRulesServiceHandler()
-	Logger = base.IotLogger
-	Scanner = GetNetScanner()
+	IdGenSer     = model.GetIdGenServiceHandler()
+	Logger 		 = base.IotLogger
+	Scanner 	 = GetNetScanner()
+	FuncSer 	 = NewFuncs(100)
+	if err := BindRuleIdAndFunc();err != nil {
+		Logger.Error("BindRuleIdAndFunc error:%v",err)
+	}
 	Logger.Info("service init success")
 }
 

@@ -2,6 +2,7 @@ package model
 
 import (
 	"fmt"
+	"github.com/jinzhu/gorm"
 	"testing"
 	"time"
 )
@@ -26,5 +27,15 @@ func TestDetectResultService_InsertResult(t *testing.T)  {
 			r.ResultMark = 1
 		}
 		GetDetectResultHandler().InsertResult(r)
+	}
+}
+
+func TestDetectResultService_GetResultByDetectionID(t *testing.T) {
+	Init()
+	reuslt ,err := GetDetectResultHandler().GetResultByDetectionID("5")
+	if gorm.IsRecordNotFoundError(err) || reuslt == nil{
+		Logger.Error("null")
+	}else {
+		Logger.Info("%d",len(reuslt))
 	}
 }

@@ -5,6 +5,11 @@
         var detectionID = document.getElementById("historyT").rows[rowindex].cells[1].innerHTML;
         $("#"+obj.id).attr("href", "/result?detectionID=" + detectionID);
     }
+    function jumptoCreate(obj) {
+        var deviceID = obj.parentNode.parentNode.parentNode.id;
+        var rules = document.getElementById("inputRules").value;
+        $.post("/createOrder", {'deviceID':deviceID, 'rules':rules});
+    }
 </script>
 <div class="container">
     <h2>物联网安全网关</h2>
@@ -32,12 +37,23 @@
                 <button class="btn-flat waves-effect waves-light green">
                     <a href="/result" id={{$k}} onclick="jumptoResult(this)" class="yellow-text">查看<i class="material-icons">send</i>
                     </a>
-                {{/*<script>jumptoiplist()</script>*/}}
                 </button>
             </td>
         </tr>
         {{end}}
         </tbody>
+        <tr id={{.DeviceID}}>
+            <td>新建</td>
+            <td>待生成新的检测订单号</td>
+            <td> <div class="input-field col s6">
+                <input id="inputRules" type="text" class="validate">
+                <label for="inputRules">请输入检测规则</label>
+            </div></td>
+            <td><button class="btn-flat waves-effect waves-light green">
+                <a id="create" onclick="jumptoCreate(this)" class="yellow-text">创建<i class="material-icons">send</i>
+                </a>
+            </button></td>
+        </tr>
     </table>
     <hr/>
 </div>

@@ -29,6 +29,7 @@ func loadRouters(router *gin.Engine) {
 	router.GET("/detHistory", detectHistory)
 	router.GET("/result", result)
 	router.GET("/test", test)
+	router.POST("/createOrder",CreateOrder)
 	router.GET("/visualization", visualize)
 }
 func test(c *gin.Context) {
@@ -65,28 +66,54 @@ func detectHistory(c *gin.Context) {
 }
 func visualize(c *gin.Context) {
 	DetectionID := strings.Replace(c.Query("DetectionID")," ","",-1)
-	deteId, err := strconv.Atoi(DetectionID)
-	if err != nil {
-		Logger.Error("gateway web server visualize input device id :%s is not int error:%v", DetectionID,err)
-		return
-	}
-	drawResult(c.Writer,deteId)
+	drawResult(c.Writer,DetectionID)
 }
 func welcome(c *gin.Context) {
 	c.HTML(200, "welcome.html", gin.H{})
 }
-
-func result(c *gin.Context) {
-	detectionID := strings.Replace(c.Query("detectionID")," ","",-1)
-	deteId, err := strconv.Atoi(detectionID)
+func CreateOrder(c *gin.Context) {
+	c.Request.ParseForm()
+	deviceIDs := c.Request.PostForm["deviceID"][0]
+	deviceID ,err := strconv.ParseUint(deviceIDs,10,64)
 	if err != nil {
-		Logger.Error("gateway web server result input device id :%s is not int error:%v", detectionID,err)
+		Logger.Error("gateway web server CreateOrder call ParseUint error:%v",err)
 		c.HTML(200, "error.html", gin.H{
-			"errorMsg":fmt.Sprintf("gateway web server result input device id :%s is not int error:%v", detectionID,err),
+			"errorMsg":fmt.Sprintf("gateway web server CreateOrder call ParseUint error:%v",err),
 		})
 		return
 	}
-	rule,err := DevRulesSer.GetDeviceRuleByDetectionID(deteId)
+	rulse := c.Request.PostForm["rules"][0]
+	err = CreateDetectionOrder(deviceID,rulse)
+	if err != nil {
+		Logger.Error("gateway web server CreateOrder call CreateDetectionOrder error:%v",err)
+		c.HTML(200, "error.html", gin.H{
+			"errorMsg":fmt.Sprintf("gateway web server CreateOrder call CreateDetectionOrder error:%v",err),
+		})
+		return
+	}
+	deviceRules,err := DevRulesSer.GetDeviceRuleByDeviceID(deviceID)
+	if err != nil {
+		Logger.Error("gateway web server CreateOrder call DevRulesSer.GetDeviceRuleByDeviceID error:%v",err)
+		c.HTML(200, "error.html", gin.H{
+			"errorMsg":fmt.Sprintf("gateway web server CreateOrder call DevRulesSer.GetDeviceRuleByDeviceID error:%v",err),
+		})
+		return
+	}
+	Tbody := []string{"detectionId","detectRules"}
+	historyTable := map[int]map[string]string{}
+	for i,k := range deviceRules {
+		historyTable[i] = map[string]string{"detectionId": k.DetectionID,"detectRules":k.Detectrules}
+	}
+	c.HTML(200, "history.html", gin.H{
+		"DeviceID":    deviceID,
+		"historyTable": historyTable,
+		"Tbody":       Tbody,
+	})
+}
+
+func result(c *gin.Context) {
+	detectionID := strings.Replace(c.Query("detectionID")," ","",-1)
+	rule,err := DevRulesSer.GetDeviceRuleByDetectionID(detectionID)
 	if err != nil {
 		Logger.Error("gateway web server result call DevRulesSer.GetDeviceRuleByDetectionID error:%v",err)
 		c.HTML(200, "error.html", gin.H{
@@ -94,13 +121,23 @@ func result(c *gin.Context) {
 		})
 		return
 	}
-	results,err := DetResultSer.GetResultByDeviceID(deteId)
-	if err != nil || results == nil{
-		Logger.Error("gateway web server result call DetResultSer.GetResultByDeviceID error:%v",err)
-		c.HTML(200, "error.html", gin.H{
-			"errorMsg":fmt.Sprintf("gateway web server result call DetResultSer.GetResultByDeviceID error:%v",err),
-		})
-		return
+	results,err := DetResultSer.GetResultByDetectionID(detectionID)
+	if err != nil {
+			Logger.Error("result call GetResultByDetectionID error:%v",err)
+			c.HTML(200, "error.html", gin.H{
+				"errorMsg":fmt.Sprintf("result call GetResultByDetectionID error:%v",err),
+			})
+			return
+	}
+	if len(results) == 0 {
+		err = DetectDataByDetectionId(detectionID)
+		if err != nil {
+			Logger.Error("result call DetectDataByDetectionId error:%v",err)
+			c.HTML(200, "error.html", gin.H{
+				"errorMsg":fmt.Sprintf("result call DetectDataByDetectionId error:%v",err),
+			})
+			return
+		}
 	}
 	c.HTML(200, "result.html", gin.H{
 			"DeviceID": rule.DeviceID,
@@ -127,7 +164,7 @@ func iplist(c *gin.Context) {
 			//	deviceTable[i] = map[string]string{"ip": k.Ip, "mac": k.Mac}
 			//}
 			if k.Mac == ""{
-				k.Mac = "00.00.00.00"
+				k.Mac = "00.00.00.02"
 			}
 			deviceTable[i] = map[string]string{"ip": k.Ip, "mac": k.Mac}
 		}

@@ -66,7 +66,7 @@ func (d *DeviceStatusService)GetAllInfo() []*DeviceStatus{
 }
 
 //查询一个device id下的所有记录
-func (d *DeviceStatusService)GetStatusByDeviceID(deviceID int) []*DeviceStatus{
+func (d *DeviceStatusService)GetStatusByDeviceID(deviceID uint64) []*DeviceStatus{
 	var DevStatusList []*DeviceStatus
 	err := DBIot.Where("deviceid=?",deviceID).Find(&DevStatusList).Error
 	if err != nil{

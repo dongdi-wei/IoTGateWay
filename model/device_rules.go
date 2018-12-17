@@ -16,8 +16,8 @@ var (
 type DeviceRule struct {
 	DeviceID 		uint64 		`gorm:"column:deviceid"`		//设置DeviceID对应在数据库表里的列为deviceid,设备id，用于区分设备，为0时表示未知设备
 	DeviceName  	string		`gorm:"column:devicename"`		//设备名称
-	Detectrules		string		`gorm:"column:detectionrules"`//使用的检测规则
-	DetectionID 	string		`gorm:"column:detectionid"`	//检测订单号
+	Detectrules		string		`gorm:"column:detectionrules"`	//使用的检测规则
+	DetectionID 	string		`gorm:"column:detectionid"`		//检测订单号
 	CreateTime  	time.Time	`gorm:"column:createtime"`
 	ModifyTime 		time.Time	`gorm:"column:modifytime"`
 }
@@ -57,7 +57,7 @@ func (d *DeviceRulesService)GetDeviceRuleByDeviceID(deviceID uint64) ([]*DeviceR
 }
 
 //查询一个detect id下的一条记录
-func (d *DeviceRulesService)GetDeviceRuleByDetectionID(detectID int) (*DeviceRule,error){
+func (d *DeviceRulesService)GetDeviceRuleByDetectionID(detectID string) (*DeviceRule,error){
 	var DeviceRule DeviceRule
 	err := DBIot.Where("detectionid=?",detectID).Find(&DeviceRule).Error
 	if err != nil{

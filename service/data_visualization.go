@@ -75,7 +75,7 @@ func drawline(x0, y0, x1, y1 int, brush Putpixel) {
 	}
 }
 
-func drawResult(out io.Writer,detectionID int) {
+func drawResult(out io.Writer,detectionID string) {
 	anim := gif.GIF{LoopCount: consts.Nframes}
 	phase := 0.0
 	data ,err := DetResultSer.GetResultByDetectionID(detectionID)
@@ -87,25 +87,33 @@ func drawResult(out io.Writer,detectionID int) {
 	for i := 0; i < consts.Nframes; i++ {
 		rect := image.Rect(0, 0, 4*consts.Size+1, 2*consts.Size+1)
 		img := image.NewPaletted(rect, palatte)
-		xtemp := 0.0
-		ytemp := float64(data[0].ResultMark)
-		for t := 0.0; int(t) < (i+1)*len(data)/consts.Nframes; t ++ {
+		x0 := int(0.0/lenthX*4*consts.Size)
+		y0 := 2*consts.Size-int(float64(data[0].ResultMark)/2*consts.Size)
+		m0 := data[0].ResultMark
+		for t := 0.0; int(t) < (i+1)*len(data)/consts.Nframes; t +=1 {
 			k := data[int(t)]
-			colorIndex := consts.BlackIndex
-			if k.ResultMark == 1 {
-				colorIndex = consts.GreenIndex
-			}else if k.ResultMark == 2{
-				colorIndex = consts.RedIndex
-				Logger.Info("i:%v,t:%v,xtemp:%v,ytemp:%v,x:%v,y:%v",i,t,int(xtemp/lenthX*4*consts.Size), 2*consts.Size-int(ytemp/2*consts.Size), int(float64(t)/lenthX*4*consts.Size), 2*consts.Size-int(float64(k.ResultMark)/2*consts.Size))
-				Logger.Info("i:%v,t:%v,xtemp:%v,ytemp:%v,x:%v,y:%v",i,t,xtemp/lenthX*4*consts.Size, ytemp/2*consts.Size, float64(t)/lenthX*4*consts.Size, float64(k.ResultMark)/2*consts.Size)
+			x1 := int(t/lenthX*4*consts.Size)
+			y1 := 2*consts.Size-int(float64(k.ResultMark)/2*consts.Size)
+			if k.ResultMark == 0{
+				drawline(x0,y0,x1,y1, func(x, y int) {
+					img.SetColorIndex(x, y, consts.BlackIndex)
+				})
+			}else if k.ResultMark == 1 && m0 == 1{
+				drawline(x0,y0,x1,y1, func(x, y int) {
+					img.SetColorIndex(x, y, consts.GreenIndex)
+				})
+			}else if k.ResultMark == 2 || m0 == 2{
+				drawline(x0,y0,x1,y1, func(x, y int) {
+					img.SetColorIndex(x, y, consts.RedIndex)
+				})
 			}else {
-				colorIndex = consts.YellowIndex
+				drawline(x0,y0,x1,y1, func(x, y int) {
+					img.SetColorIndex(x, y, consts.YellowIndex)
+				})
 			}
-			drawline(int(xtemp/lenthX*4*consts.Size), 2*consts.Size-int(ytemp/2*consts.Size), int(float64(t)/lenthX*4*consts.Size), 2*consts.Size-int(float64(k.ResultMark)/2*consts.Size), func(x, y int) {
-				img.SetColorIndex(x, y, uint8(colorIndex))
-			})
-			xtemp = float64(t)
-			ytemp = float64(k.ResultMark)
+			x0 = x1
+			y0 = y1
+			m0 = k.ResultMark
 		}
 		phase += 0.1
 		anim.Delay = append(anim.Delay, consts.Delay)

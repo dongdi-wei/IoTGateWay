@@ -28,3 +28,18 @@ const (
 	BlueIndex  = 4
 	YellowIndex= 5
 )
+
+const (
+	DetectionIdTag = "DetectionId"  //id生成器的检测订单号的tag
+	UserIdTag	   = "UserId"		//id生成器用户号的tag
+)
+
+const (
+	DataSliceLength = 60 //数据分组长度
+)
+
+const (
+	NoMark			= 0	 //没有标记
+	MarkNomal 		= 1	 //正常标记
+	MarkAbnormal 	= 2 //异常标记
+)
